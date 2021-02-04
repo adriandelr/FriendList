@@ -14,17 +14,17 @@ const App = () => (
     <Router>
       <div>
         <nav>
-          <NavLink className="menu" to="/FriendList/friends">
+          <NavLink className="menu" to="/friend-list/friends">
             Friends
           </NavLink>
-          <NavLink className="menu" to="/FriendList/about">
+          <NavLink className="menu" to="/friend-list/about">
             About
           </NavLink>
         </nav>
         <main>
-          <Route exact path="/FriendList/" component={Friends} />
-          <Route path="/FriendList/friends" component={Friends} />
-          <Route path="/FriendList/about" component={About} />
+          <Route exact path="/friend-list/" component={Friends} />
+          <Route path="/friend-list/friends" component={Friends} />
+          <Route path="/friend-list/about" component={About} />
         </main>
       </div>
     </Router>

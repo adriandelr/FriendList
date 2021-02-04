@@ -1,6 +1,6 @@
 {
   "name": "friends-list-app",
-  "homepage": "https://adriandelr.github.io/FriendList",
+  "homepage": "https://adriandelr.github.io/friend-list",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
