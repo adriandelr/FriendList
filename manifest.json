@@ -3,12 +3,12 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "sf-logo",
+      "src": "sf-logo.ico",
       "sizes": "16x16",
       "type": "image/png"
     }
   ],
-  "start_url": "./index.html/friends",
+  "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
