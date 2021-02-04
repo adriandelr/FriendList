@@ -1,0 +1,181 @@
+.App {
+  text-align: center;
+  font-family: Helvetica;
+  flex: 1;
+}
+
+/* Start of header */
+
+.App .App-header {
+  background-color: #ffcc33;
+  padding: 20px;
+}
+
+.App .App-header .App-logo {
+  height: 70px;
+}
+
+.App .App-header h3 {
+  text-align: center;
+  margin: 0;
+  color: #eeeeee;
+}
+
+/* End of Header */
+
+/* Start of Nav */
+
+.App nav {
+  height: 30px;
+  background-color: #d9534f;
+  margin-bottom: 30px;
+}
+
+.App nav .menu {
+  color: #555555;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-left: 40px;
+  line-height: 2;
+  font-weight: bold;
+}
+
+.App nav .menu.active {
+  color: #ffffff;
+  pointer-events: none;
+}
+
+.App nav .menu:first-child {
+  margin-left: 0px;
+}
+
+/* End of Nav */
+
+/* Start of Main */
+
+.App main {
+  color: #777777;
+  visibility: hidden;
+}
+
+.App .text-friends-counter {
+  margin-bottom: 30px;
+}
+
+.App .row-friends {
+  padding: 7px 17px;
+  margin: 17px auto;
+  border: solid 1px #cccccc;
+  text-align: left;
+  max-width: 768px;
+  display: block;
+}
+
+.App form {
+  margin-bottom: 30px;
+}
+
+.App .row-friends .btn-group {
+  position: relative;
+  float: right;
+  top: -32px;
+}
+
+.App .row-friends .btn-group button:first-child {
+  margin-right: 20px;
+}
+
+.App .friends-list {
+  min-height: 537px;
+}
+
+.App .friends-list .div-name,
+.App .friends-list .div-phone,
+.App .friends-list .div-submit {
+  display: inline-block;
+  font-size: 17px;
+  margin-right: 20px;
+}
+
+.App input,
+.App button {
+  padding: .3rem .75rem;
+  color: #464a4c;
+  background-color: #fff;
+  background-image: none;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: .25rem;
+  -webkit-transition: border-color ease-in-out .15s,
+    -webkit-box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s,
+    -webkit-box-shadow ease-in-out .15s;
+}
+
+.App .text-about {
+  display: block;
+  margin: 0 auto;
+  width: 768px;
+}
+
+.App .fa-spin {
+  position: absolute;
+  padding: 20px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 37px;
+}
+
+/* End of Main */
+
+/* Start of Footer */
+
+footer {
+  position: relative;
+  text-align: center;
+  background-color: #333333;
+  font-size: 11px;
+  padding: 7px 17px;
+  margin: 17px auto 0;
+  max-width: 768px;
+  visibility: hidden;
+}
+
+/* End of Footer */
+
+/* Start of Media Queries */
+@media (max-width: 767px) {
+  .App .row-friends .btn-group,
+  .App .row-friends {
+    float: none;
+    top: 0;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .App .row-friends {
+    margin: 27px 37px;
+  }
+  .App .friends-list .div-submit {
+    display: block;
+    margin-top: 20px;
+  }
+  .App .friends-list .div-name,
+  .App .friends-list .div-phone,
+  .App .friends-list .div-submit {
+    margin: 0 73px 10px;
+  }
+}
+/* End of Media Queries */
+
+/* Remove H5 number spin box */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
