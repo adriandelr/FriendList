@@ -3,7 +3,7 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "sf-logo",
+      "src": "sf-logo.ico",
       "sizes": "16x16",
       "type": "image/png"
     }

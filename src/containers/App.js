@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import { Friends } from "./Friends";
 import { About } from "./About";
 
-const App = () =>
+const App = () => (
   <div className="App">
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
@@ -22,13 +22,14 @@ const App = () =>
           </NavLink>
         </nav>
         <main>
-          <Route exact path="/" component={Friends} />
+          <Route exact path="/FriendList/" component={Friends} />
           <Route path="/friends" component={Friends} />
           <Route path="/about" component={About} />
         </main>
       </div>
     </Router>
     <i className="fa fa-spinner fa-spin" aria-hidden="true"></i>
-  </div>;
+  </div>
+);
 
 export default App;
