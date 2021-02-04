@@ -14,21 +14,21 @@ export class AddFriend extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     this.setState({ recent_id: this.state.recent_id + 1 });
     $.ajax({
       type: "POST",
-      url: "http://jsonplaceholder.typicode.com/users/",
+      url: "https://jsonplaceholder.typicode.com/users/",
       data: {
         id: this.state.recent_id + 1,
         name: this.state.name,
-        phone: this.state.phone
+        phone: this.state.phone,
       },
-      success: function(data) {
+      success: function (data) {
         this.props.updateList(data);
         this.setState({ name: "", phone: "" });
         console.log("Friend Added Successfully!");
-      }.bind(this)
+      }.bind(this),
     });
     event.preventDefault();
   };

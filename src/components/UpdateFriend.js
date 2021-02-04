@@ -7,7 +7,7 @@ export class UpdateFriend extends React.Component {
     this.state = {
       name: this.props.value.name,
       phone: this.props.value.phone,
-      isDeleting: false
+      isDeleting: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -19,20 +19,20 @@ export class UpdateFriend extends React.Component {
       this.setState({
         name: "",
         phone: "",
-        isDeleting: false
+        isDeleting: false,
       });
     } else {
       this.setState({
         name: nextProps.value.name,
         phone: nextProps.value.phone,
-        isDeleting: false
+        isDeleting: false,
       });
     }
   }
 
-  clearFields = event => {
+  clearFields = (event) => {
     this.setState({
-      isDeleting: true
+      isDeleting: true,
     });
   };
 
@@ -40,24 +40,25 @@ export class UpdateFriend extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     const newProps = {
       id: this.props.value.id,
       name: this.state.name,
-      phone: this.state.phone
+      phone: this.state.phone,
     };
     if (this.props.value.id <= 10) {
       $.ajax({
         type: "PUT",
         data: {
           name: this.state.name,
-          phone: this.state.phone
+          phone: this.state.phone,
         },
-        url: "http://jsonplaceholder.typicode.com/users/" + this.props.value.id,
-        success: function() {
+        url:
+          "https://jsonplaceholder.typicode.com/users/" + this.props.value.id,
+        success: function () {
           this.props.updateList(newProps);
           console.log("Friend Updated Successfully!");
-        }.bind(this)
+        }.bind(this),
       });
     } else {
       this.props.updateList(newProps);

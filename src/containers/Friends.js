@@ -16,14 +16,14 @@ class FriendsList extends React.Component {
     this.state = {
       friends: [],
       isUpdating: false,
-      selected_obj: null
+      selected_obj: null,
     };
   }
 
   updateList(data) {
     if (this.state.isUpdating) {
       const friends = this.state.friends;
-      friends.map(function(friend) {
+      friends.map(function (friend) {
         return friend.id === data.id
           ? ((friend.name = data.name), (friend.phone = data.phone))
           : null;
@@ -42,9 +42,9 @@ class FriendsList extends React.Component {
       }
     }
     this.setState({
-      friends: this.state.friends.filter(function(friend) {
+      friends: this.state.friends.filter(function (friend) {
         return friend !== obj;
-      })
+      }),
     });
   }
 
@@ -56,16 +56,16 @@ class FriendsList extends React.Component {
     $.ajax({
       type: "GET",
       url: this.props.api,
-      success: function(res) {
+      success: function (res) {
         const friends = res.reverse();
-        friends.map(function(friend) {
+        friends.map(function (friend) {
           return (friend.phone = friend.phone.replace(/[^0-9 ]+/g, ""));
         });
         this.setState({ friends });
         $("main").css("visibility", "visible");
         $("footer").css("visibility", "visible");
         $(".fa-spin").css("display", "none");
-      }.bind(this)
+      }.bind(this),
     });
   }
 
@@ -75,18 +75,20 @@ class FriendsList extends React.Component {
         <div className="text-friends-counter">
           You have <b>{this.state.friends.length} friends</b> in your list.
         </div>
-        {this.state.isUpdating
-          ? <UpdateFriend
-              updateList={this.updateList}
-              arrayLength={this.state.friends.length}
-              value={this.state.selected_obj}
-              ref="child"
-            />
-          : <AddFriend
-              updateList={this.updateList}
-              arrayLength={this.state.friends.length}
-            />}
-        {this.state.friends.map(friend =>
+        {this.state.isUpdating ? (
+          <UpdateFriend
+            updateList={this.updateList}
+            arrayLength={this.state.friends.length}
+            value={this.state.selected_obj}
+            ref="child"
+          />
+        ) : (
+          <AddFriend
+            updateList={this.updateList}
+            arrayLength={this.state.friends.length}
+          />
+        )}
+        {this.state.friends.map((friend) => (
           <div className="row-friends" key={friend.id}>
             <div className="text-name">
               <b>Name: </b>
@@ -104,14 +106,14 @@ class FriendsList extends React.Component {
               <DeleteFriend deleteFriend={this.deleteFriend} value={friend} />
             </div>
           </div>
-        )}
+        ))}
       </div>
     );
   }
 }
 
-const api = "http://jsonplaceholder.typicode.com/users";
-export const Friends = () =>
+const api = "https://jsonplaceholder.typicode.com/users";
+export const Friends = () => (
   <div>
     <h2>Friends List</h2>
     <FriendsList api={api} />
@@ -120,4 +122,5 @@ export const Friends = () =>
         For demo purpose only. Built by Adrian Cruz Del Rosario using ReactJS.
       </span>
     </footer>
-  </div>;
+  </div>
+);
